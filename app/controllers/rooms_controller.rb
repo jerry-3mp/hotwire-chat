@@ -8,6 +8,8 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
+    flash.now[:notice] ||= "You are now in room #{@room.name}."
+    # Rails implicitly render :show
   end
 
   # GET /rooms/new
