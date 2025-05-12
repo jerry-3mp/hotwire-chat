@@ -9,6 +9,7 @@
     <%= render room %>
     <p>
       <%= link_to "Show this room", room %>
+      <%= button_to "Destroy this room", room, method: :delete %>
     </p>
   <% end %>
 </div>
