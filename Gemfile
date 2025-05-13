@@ -58,4 +58,6 @@ end
 
 gem "importmap-rails", "~> 2.1"
 
-gem "hotwire-rails", "~> 0.1.3"
+gem "turbo-rails", "~> 2.0"
+
+gem "stimulus-rails", "~> 1.3"
