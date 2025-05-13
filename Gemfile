@@ -61,3 +61,5 @@ gem "importmap-rails", "~> 2.1"
 gem "turbo-rails", "~> 2.0"
 
 gem "stimulus-rails", "~> 1.3"
+
+gem "tailwindcss-rails", "= 3.3.2"

@@ -50,3 +50,6 @@ koans.iml
 
 # Cucumber temp files
 .path_progress
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
