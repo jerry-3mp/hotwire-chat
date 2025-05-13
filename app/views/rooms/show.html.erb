@@ -1,27 +1,25 @@
 <%= turbo_stream_from @room %>
-<div class="flex h-screen">
+<div class="flex flex-col h-screen">
   <!-- Left Panel -->
-  <div id="messages" class="w-1/4 bg-gray-100 p-4 border-r">
-    <%= turbo_frame_tag "room" do %>
-      <p style="color: green"><%= notice %></p>
-      <%= render @room %>
+  <%= turbo_frame_tag "room", class: "h-48 bg-gray-100 p-4 border-r shrink-0" do %>
+    <p style="color: green"><%= notice %></p>
+    <%= render @room %>
 
-      <div>
-        <%= link_to "Edit this room", edit_room_path(@room) %> |
-        <%= link_to "Back to rooms", rooms_path, "data-turbo-frame": "_top" %>
+    <div>
+      <%= link_to "Edit this room", edit_room_path(@room) %> |
+      <%= link_to "Back to rooms", rooms_path, "data-turbo-frame": "_top" %>
 
-        <%= button_to "Destroy this room", @room, method: :delete %>
-      </div>
-    <% end %>
-  </div>
+      <%= button_to "Destroy this room", @room, method: :delete %>
+    </div>
+  <% end %>
 
   <!-- Middle Panel (Main Content) -->
-  <div id="messages" class="w-1/2 bg-white p-4">
-    <%= render @room.messages %>
+  <div id="messages" class="flex-1 bg-white border-b overflow-y-auto">
+    <div class="p-4">
+      <%= render @room.messages %>
+    </div>
   </div>
 
   <!-- Right Panel -->
-  <div class="w-1/4 bg-gray-50 p-4 border-l">
-    <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top" %>
-  </div>
+    <%= turbo_frame_tag "new_message", src: new_room_message_path(@room), target: "_top", class: "h-24 bg-gray-50 p-4 border-l" %>
 </div>
